@@ -43,7 +43,7 @@ Liquid.Template = Class.extend({
     if(args.filters){ context.addFilters(arg.filters); }
     
     try {
-      return this.root.render(context).join('');
+      return this.root.render(context).flatten().join('');
     } finally {
       this.errors = context.errors;
     }
